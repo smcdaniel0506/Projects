@@ -122,42 +122,42 @@ public class appWindow extends JFrame {
 		button1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				--clicks;
-				clickCheckNeg();
+				clickCheck();
 				lblNewLabel.setText(Integer.toString(clicks));
 			}
 		});
 		button2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				++clicks;
-				clickCheckPos();
+				clickCheck();
 				lblNewLabel.setText(Integer.toString(clicks));
 			}
 		});
 		button3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				clicks += 5;
-				clickCheckPos();
+				clickCheck();
 				lblNewLabel.setText(Integer.toString(clicks));
 			}
 		});
 		button4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				clicks -= 5;
-				clickCheckNeg();
+				clickCheck();
 				lblNewLabel.setText(Integer.toString(clicks));
 			}
 		});
 		button5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				clicks -= 10;
-				clickCheckNeg();
+				clickCheck();
 				lblNewLabel.setText(Integer.toString(clicks));
 			}
 		});
 		button6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				clicks += 10;
-				clickCheckPos();
+				clickCheck();
 				lblNewLabel.setText(Integer.toString(clicks));
 			}
 		});
@@ -169,23 +169,18 @@ public class appWindow extends JFrame {
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////
-	/// Methods to check clicks and display Green (positive) and Red (negative)
+	/// Methods to check current number or reset counter
 	//////////////////////////////////////////////////////////////////////////////////
-	public void clickCheckPos() {
+	public void clickCheck() {
 		if (clicks == 0) {
 			contentPane.setBackground(Color.LIGHT_GRAY);
 		} else if (clicks > 0) {
 			contentPane.setBackground(Color.GREEN);
-		}
-	}
-
-	public void clickCheckNeg() {
-		if (clicks == 0) {
-			contentPane.setBackground(Color.LIGHT_GRAY);
 		} else if (clicks < 0) {
 			contentPane.setBackground(Color.RED);
 		}
 	}
+
 
 	public void resetCount() {
 		clicks = 0;
